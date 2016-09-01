@@ -5,7 +5,7 @@ int main()
 {
     int cents;
     
-    cout << "Welcome to CoinStar! To begin, deposit coins in the labeled slot." << endl;
+    cout << "Welcome to CoinStar! To begin, deposit change in the labeled slot." << endl;
     
     cin >> cents;
     
