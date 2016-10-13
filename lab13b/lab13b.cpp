@@ -2,10 +2,8 @@
 using namespace std;
 
 int main() {
-    int minElapsed = 0;
-    while(minElapsed <= 119) {
+    for(int minElapsed = 0; minElapsed <= 119; ++ minElapsed) {
         cout << "Current time: " << 1 + (minElapsed / 60) << ":" << minElapsed % 60 << endl;
-        ++ minElapsed;
     }
     
     int startTime = 0;
@@ -16,8 +14,7 @@ int main() {
     cout << "Enter end time in minutes past midnight: " << endl;
     cin >> endTime;
     
-    int cyclesElapsed = 0;
-    while(cyclesElapsed < (endTime - startTime) / 15) {
+    for(int cyclesElapsed = 0; cyclesElapsed < (endTime - startTime) / 15; ++ cyclesElapsed) {
         int hours = (startTime + (cyclesElapsed * 15)) / 60;
         int minutes = (startTime + (cyclesElapsed * 15)) % 60;
         
@@ -27,7 +24,5 @@ int main() {
         string clockminutes = (minutes < 10) ? "0" + to_string(minutes) : to_string(minutes);
         
         cout << "Current time: " << clockhours << ":" << clockminutes << " " << meridiem << endl;
-        
-        ++ cyclesElapsed;
     }
 }
