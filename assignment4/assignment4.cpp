@@ -51,7 +51,7 @@ int main() {
     int i = 0;                          // General-purpose loop counter
     int j = 0;                          // Current array position
     int maxLength = 0;                  // The length of the longest word
-    bool valid;                         // False if currentWord is in stop word file or is more than 3 characters long
+    bool valid;                         // False if currentWord is in stop word file or is less than 3 characters long
     
     cout << "Please enter the name of your input file (including its extension): ";
     while(!inFS.is_open()) {
@@ -91,12 +91,13 @@ int main() {
         while (!lineStream.eof()) {                                             // We haven't reached the end of the line
             valid = true;
             lineStream >> inputWord;
-            for (i = 3; i < inputWord.length(); ++ i) {
+            for (i = 2; i < inputWord.length(); ++ i) {
                 if (ispunct(inputWord[i]) && inputWord[i] != '\'') {            // String contains punctuation, remove it
                     inputWord.resize(i);
                 }
             }
-            if (inputWord.length() > 3) {
+            if (inputWord.length() > 2) {
+                inputWord[0] = tolower(inputWord[0]);
                 stopFS.close();
                 stopFS.open(fileName);
                 while (valid && !stopFS.eof()) {
@@ -110,7 +111,6 @@ int main() {
                 valid = false;
             }
             if (valid) {
-                inputWord[0] = toupper(inputWord[0]);                           // Capitalize
                 for (i = 0; i < 100; ++ i) {
                     if (word[i].getWord() == inputWord) {                       // We have this word already, add 1 to count
                         word[i].addToCount();

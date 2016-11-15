@@ -1,12 +1,11 @@
 Word       Count      First Line 
 ---------------------------------
-Little     1          1          
-Miss       2          1          
-Muffet     2          1          
-Tuffet     1          1          
-Eating     1          2          
-Curds      1          2          
-Whey       1          2          
-Along      1          3          
-Spider     1          3          
-Frightened 1          5          
+miss       2          1          
+muffet     2          1          
+sat        2          1          
+tuffet     1          1          
+eating     1          2          
+curds      1          2          
+whey       1          2          
+spider     1          3          
+frightened 1          5          
